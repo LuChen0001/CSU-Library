@@ -8,6 +8,7 @@ import requests
 import argparse
 import configparser
 import urllib.parse
+import traceback
 
 from bs4 import BeautifulSoup
 from datetime import datetime
