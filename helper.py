@@ -233,8 +233,11 @@ if __name__ == "__main__":
 
     helper = CSULibrary(args.userid, args.password)
     # 故意不做异常处理，这样 Github 便会发邮件提醒
-    if args.action == 'reserve':
-        helper.reserve()
+       if args.action == 'reserve':
+        try:
+            helper.reserve()
+        except Exception as e:
+            traceback.print_exc()
     elif args.action == 'checkIn':
         helper.checkIn()
     elif args.action == 'leave':
